@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="data" class="ma.emsi.dao.DataImpl"></bean>
+    <!-- Bean pour la classe MetierImpl avec injection par setters -->
+    <!--<bean id="metier_setInjc" class="ma.emsi.metier.MetierImpl">
+        <property name="idata" ref="data"></property>
+    </bean>-->
+    <!-- Bean pour la classe MetierImpl avec injection par constructeur -->
+    <bean id="metier_constInjc" class="ma.emsi.metier.MetierImpl">
+        <constructor-arg ref="data"></constructor-arg>
+    </bean>
+</beans>
